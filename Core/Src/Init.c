@@ -1,0 +1,13 @@
+#include "../Inc/Init.h"
+
+void GPIO_G_Init(void){
+    RCC_AHB1ENR   |= RCC_GPIO_G_EN;
+    GPIO_G_MODER   |= GPIO_G02_OUTPUT;
+    GPIO_G_MODER   |= GPIO_G03_OUTPUT;
+}
+
+void GPIO_D_Init(void){
+    SET_BIT(RCC->AHB1ENR, RCC_AHB1ENR_GPIODEN);
+    SET_BIT(GPIOD->MODER, GPIO_MODER_MODER6_0);
+    SET_BIT(GPIOD->MODER, GPIO_MODER_MODER7_0);
+}
