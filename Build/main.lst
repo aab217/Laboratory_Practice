@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 1
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -30,566 +30,95 @@ ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 1
   28              	.LFB130:
    1:Core/Src/main.c **** #include "../Inc/Init.h"
    2:Core/Src/main.c **** 
-   3:Core/Src/main.c **** // bool flag0 = 1;
-   4:Core/Src/main.c **** int flag0 = 1;
-   5:Core/Src/main.c **** // bool flag1 = 1;
-   6:Core/Src/main.c **** int cup = 1;
-   7:Core/Src/main.c **** int delay = 50000;
-   8:Core/Src/main.c **** int T1 = 4;
-   9:Core/Src/main.c **** int T0 = 2;
-  10:Core/Src/main.c **** int main(void)
-  11:Core/Src/main.c **** {
-  29              		.loc 1 11 1 view -0
+   3:Core/Src/main.c **** bool flag0 = 1;
+   4:Core/Src/main.c **** bool flag1 = 1;
+   5:Core/Src/main.c **** 
+   6:Core/Src/main.c **** int cup = 1, flag = 1;
+   7:Core/Src/main.c **** 
+   8:Core/Src/main.c **** int delay = 50000;
+   9:Core/Src/main.c **** int T1 = 4;
+  10:Core/Src/main.c **** int T0 = 2;
+  11:Core/Src/main.c **** 
+  12:Core/Src/main.c **** int main(void)
+  13:Core/Src/main.c **** {
+  29              		.loc 1 13 1 view -0
   30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 72
+  31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33 0000 10B5     		push	{r4, lr}
+  33 0000 08B5     		push	{r3, lr}
   34              	.LCFI0:
   35              		.cfi_def_cfa_offset 8
-  36              		.cfi_offset 4, -8
+  36              		.cfi_offset 3, -8
   37              		.cfi_offset 14, -4
-  38 0002 92B0     		sub	sp, sp, #72
-  39              	.LCFI1:
-  40              		.cfi_def_cfa_offset 80
-  12:Core/Src/main.c ****     // OUTPUT
-  13:Core/Src/main.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x04UL;    // RCC_PС ENABLE
-  41              		.loc 1 13 5 view .LVU1
-  42 0004 5D4C     		ldr	r4, .L23
-  43 0006 D4F83038 		ldr	r3, [r4, #2096]
-  44              		.loc 1 13 42 is_stmt 0 view .LVU2
-  45 000a 43F00403 		orr	r3, r3, #4
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 2
+  14:Core/Src/main.c ****     // task1();
+  15:Core/Src/main.c ****     task2();
+  38              		.loc 1 15 5 view .LVU1
+  39 0002 FFF7FEFF 		bl	task2
+  40              	.LVL0:
+  16:Core/Src/main.c **** }...
+  41              		.loc 1 16 1 is_stmt 0 view .LVU2
+  42 0006 0020     		movs	r0, #0
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s 			page 2
 
 
-  46 000e C4F83038 		str	r3, [r4, #2096]
-  14:Core/Src/main.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x10000UL; // PС08_OP
-  47              		.loc 1 14 5 is_stmt 1 view .LVU3
-  48 0012 5B4A     		ldr	r2, .L23+4
-  49 0014 D2F80038 		ldr	r3, [r2, #2048]
-  50              		.loc 1 14 42 is_stmt 0 view .LVU4
-  51 0018 43F48031 		orr	r1, r3, #65536
-  52 001c C2F80018 		str	r1, [r2, #2048]
-  15:Core/Src/main.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x40000UL; // PС09_OP
-  53              		.loc 1 15 5 is_stmt 1 view .LVU5
-  54              		.loc 1 15 42 is_stmt 0 view .LVU6
-  55 0020 43F4A023 		orr	r3, r3, #327680
-  56 0024 C2F80038 		str	r3, [r2, #2048]
-  16:Core/Src/main.c **** 
-  17:Core/Src/main.c ****     // OUTPUT
-  18:Core/Src/main.c ****     GPIO_G_Init();
-  57              		.loc 1 18 5 is_stmt 1 view .LVU7
-  58 0028 FFF7FEFF 		bl	GPIO_G_Init
-  59              	.LVL0:
-  19:Core/Src/main.c **** 
-  20:Core/Src/main.c ****     // OUTPUT
-  21:Core/Src/main.c ****     GPIO_D_Init();
-  60              		.loc 1 21 5 view .LVU8
-  61 002c FFF7FEFF 		bl	GPIO_D_Init
-  62              	.LVL1:
-  22:Core/Src/main.c **** 
-  23:Core/Src/main.c ****     // INPUT
-  24:Core/Src/main.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x10UL; // RCC_PE ENABLE
-  63              		.loc 1 24 5 view .LVU9
-  64 0030 D4F83038 		ldr	r3, [r4, #2096]
-  65              		.loc 1 24 42 is_stmt 0 view .LVU10
-  66 0034 43F01003 		orr	r3, r3, #16
-  67 0038 C4F83038 		str	r3, [r4, #2096]
-  25:Core/Src/main.c **** 
-  26:Core/Src/main.c ****     uint32_t *PORT_C = (uint32_t *)(0x40020800UL + 0x18UL);
-  68              		.loc 1 26 5 is_stmt 1 view .LVU11
-  69              	.LVL2:
-  27:Core/Src/main.c ****     uint32_t *PORT_G = (uint32_t *)(0x40021800UL + 0x18UL);
-  70              		.loc 1 27 5 view .LVU12
-  28:Core/Src/main.c ****     uint32_t *PORT_D = (uint32_t *)(0x40020C00UL + 0x18UL);
-  71              		.loc 1 28 5 view .LVU13
-  29:Core/Src/main.c ****     uint32_t *reg[] = {PORT_C, PORT_C, PORT_G, PORT_G, PORT_D, PORT_D};
-  72              		.loc 1 29 5 view .LVU14
-  73              		.loc 1 29 15 is_stmt 0 view .LVU15
-  74 003c 514B     		ldr	r3, .L23+8
-  75 003e 0C93     		str	r3, [sp, #48]
-  76 0040 0D93     		str	r3, [sp, #52]
-  77 0042 03F58053 		add	r3, r3, #4096
-  78 0046 0E93     		str	r3, [sp, #56]
-  79 0048 0F93     		str	r3, [sp, #60]
-  80 004a A3F54063 		sub	r3, r3, #3072
-  81 004e 1093     		str	r3, [sp, #64]
-  82 0050 1193     		str	r3, [sp, #68]
-  30:Core/Src/main.c ****     uint32_t mask[] = {0x100UL, 0x200UL, 0x4UL, 0x8UL, 0x40UL, 0x80UL, 0x1000000UL, 0x2000000UL, 0x
-  83              		.loc 1 30 5 is_stmt 1 view .LVU16
-  84              		.loc 1 30 14 is_stmt 0 view .LVU17
-  85 0052 EC46     		mov	ip, sp
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 3
-
-
-  86 0054 4C4C     		ldr	r4, .L23+12
-  87 0056 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
-  88 0058 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
-  89 005c 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
-  90 005e ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
-  91 0062 94E80F00 		ldm	r4, {r0, r1, r2, r3}
-  92 0066 8CE80F00 		stm	ip, {r0, r1, r2, r3}
-  31:Core/Src/main.c ****     int size = sizeof(reg) / sizeof(reg[0]);
-  93              		.loc 1 31 5 is_stmt 1 view .LVU18
-  94              	.LVL3:
-  95              		.loc 1 31 5 is_stmt 0 view .LVU19
-  96 006a 6DE0     		b	.L16
-  97              	.LVL4:
-  98              	.L4:
-  99              	.LBB2:
-  32:Core/Src/main.c ****     // while (1)
-  33:Core/Src/main.c ****     // {
-  34:Core/Src/main.c ****     //     if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x10UL) != 0)
-  35:Core/Src/main.c ****     //     {
-  36:Core/Src/main.c ****     //         if (++cup > 6)
-  37:Core/Src/main.c ****     //         {
-  38:Core/Src/main.c ****     //             for (int i = 0; i < size; i++)
-  39:Core/Src/main.c ****     //             {
-  40:Core/Src/main.c ****     //                 *(reg[i]) |= mask[i + 6];
-  41:Core/Src/main.c ****     //             }
-  42:Core/Src/main.c ****     //             cup = 1;
-  43:Core/Src/main.c ****     //         }
-  44:Core/Src/main.c ****     //         flag1 = !flag1;
-  45:Core/Src/main.c ****     //     }
-  46:Core/Src/main.c **** 
-  47:Core/Src/main.c ****     //     if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x20UL) != 0)
-  48:Core/Src/main.c ****     //     {
-  49:Core/Src/main.c ****     //         flag0 = !flag0;
-  50:Core/Src/main.c ****     //         flag1 = !flag1;
-  51:Core/Src/main.c ****     //     }
-  52:Core/Src/main.c **** 
-  53:Core/Src/main.c ****     //     if (flag1)
-  54:Core/Src/main.c ****     //     {
-  55:Core/Src/main.c ****     //         if (flag0)
-  56:Core/Src/main.c ****     //         {
-  57:Core/Src/main.c ****     //             for (int i = 0; i < cup; i++)
-  58:Core/Src/main.c ****     //             {
-  59:Core/Src/main.c ****     //                 *(reg[i]) |= mask[i];
-  60:Core/Src/main.c ****     //             }
-  61:Core/Src/main.c ****     //         }
-  62:Core/Src/main.c ****     //         else
-  63:Core/Src/main.c ****     //         {
-  64:Core/Src/main.c ****     //             for (int i = 0; i < cup; i++)
-  65:Core/Src/main.c ****     //             {
-  66:Core/Src/main.c ****     //                 *(reg[i]) |= mask[i + 6];
-  67:Core/Src/main.c ****     //             }
-  68:Core/Src/main.c ****     //         }
-  69:Core/Src/main.c ****     //         flag1 = !flag1;
-  70:Core/Src/main.c ****     //     }
-  71:Core/Src/main.c ****     //     for (int j = 0U; j < 500000U; j++)
-  72:Core/Src/main.c ****     //     {
-  73:Core/Src/main.c ****     //     }
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 4
-
-
-  74:Core/Src/main.c ****     // }
-  75:Core/Src/main.c ****     while (1)
-  76:Core/Src/main.c ****     {
-  77:Core/Src/main.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x10UL) != 0)
-  78:Core/Src/main.c ****         {
-  79:Core/Src/main.c ****             if (++cup > 6)
-  80:Core/Src/main.c ****             {
-  81:Core/Src/main.c ****                 for (int i = 0; i < size; i++)
-  82:Core/Src/main.c ****                 {
-  83:Core/Src/main.c ****                     *(reg[i]) |= mask[i + 6];
- 100              		.loc 1 83 21 is_stmt 1 view .LVU20
- 101              		.loc 1 83 26 is_stmt 0 view .LVU21
- 102 006c 12AA     		add	r2, sp, #72
- 103 006e 02EB8302 		add	r2, r2, r3, lsl #2
- 104 0072 52F8180C 		ldr	r0, [r2, #-24]
- 105              		.loc 1 83 21 view .LVU22
- 106 0076 0268     		ldr	r2, [r0]
- 107              		.loc 1 83 41 view .LVU23
- 108 0078 991D     		adds	r1, r3, #6
- 109              		.loc 1 83 38 view .LVU24
- 110 007a 12AC     		add	r4, sp, #72
- 111 007c 04EB8101 		add	r1, r4, r1, lsl #2
- 112 0080 51F8481C 		ldr	r1, [r1, #-72]
- 113              		.loc 1 83 31 view .LVU25
- 114 0084 0A43     		orrs	r2, r2, r1
- 115 0086 0260     		str	r2, [r0]
-  81:Core/Src/main.c ****                 {
- 116              		.loc 1 81 44 is_stmt 1 discriminator 3 view .LVU26
- 117 0088 0133     		adds	r3, r3, #1
- 118              	.LVL5:
- 119              	.L3:
-  81:Core/Src/main.c ****                 {
- 120              		.loc 1 81 35 discriminator 1 view .LVU27
- 121 008a 052B     		cmp	r3, #5
- 122 008c EEDD     		ble	.L4
- 123              	.LBE2:
-  84:Core/Src/main.c ****                 }
-  85:Core/Src/main.c ****                 cup = 1;
- 124              		.loc 1 85 17 view .LVU28
- 125              		.loc 1 85 21 is_stmt 0 view .LVU29
- 126 008e 3F4B     		ldr	r3, .L23+16
- 127              	.LVL6:
- 128              		.loc 1 85 21 view .LVU30
- 129 0090 0122     		movs	r2, #1
- 130 0092 1A60     		str	r2, [r3]
- 131 0094 63E0     		b	.L2
- 132              	.LVL7:
- 133              	.L21:
- 134              	.LBB3:
-  81:Core/Src/main.c ****                 {
- 135              		.loc 1 81 26 view .LVU31
- 136 0096 0023     		movs	r3, #0
- 137 0098 F7E7     		b	.L3
- 138              	.L22:
- 139              	.LBE3:
- 140              	.LBB4:
-  86:Core/Src/main.c ****             }
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 5
-
-
-  87:Core/Src/main.c ****         }
-  88:Core/Src/main.c **** 
-  89:Core/Src/main.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x20UL) != 0)
-  90:Core/Src/main.c ****         {
-  91:Core/Src/main.c ****             if (++flag0 > 3)
-  92:Core/Src/main.c ****             {
-  93:Core/Src/main.c ****                 for (int i = 0; i < size; i++)
- 141              		.loc 1 93 26 view .LVU32
- 142 009a 0023     		movs	r3, #0
- 143              	.L6:
- 144              	.LVL8:
- 145              		.loc 1 93 35 is_stmt 1 discriminator 1 view .LVU33
- 146 009c 052B     		cmp	r3, #5
- 147 009e 0FDC     		bgt	.L20
-  94:Core/Src/main.c ****                 {
-  95:Core/Src/main.c ****                     *(reg[i]) |= mask[i + 6];
- 148              		.loc 1 95 21 view .LVU34
- 149              		.loc 1 95 26 is_stmt 0 view .LVU35
- 150 00a0 12AA     		add	r2, sp, #72
- 151 00a2 02EB8302 		add	r2, r2, r3, lsl #2
- 152 00a6 52F8180C 		ldr	r0, [r2, #-24]
- 153              		.loc 1 95 21 view .LVU36
- 154 00aa 0268     		ldr	r2, [r0]
- 155              		.loc 1 95 41 view .LVU37
- 156 00ac 991D     		adds	r1, r3, #6
- 157              		.loc 1 95 38 view .LVU38
- 158 00ae 12AC     		add	r4, sp, #72
- 159 00b0 04EB8101 		add	r1, r4, r1, lsl #2
- 160 00b4 51F8481C 		ldr	r1, [r1, #-72]
- 161              		.loc 1 95 31 view .LVU39
- 162 00b8 0A43     		orrs	r2, r2, r1
- 163 00ba 0260     		str	r2, [r0]
-  93:Core/Src/main.c ****                 {
- 164              		.loc 1 93 44 is_stmt 1 discriminator 3 view .LVU40
- 165 00bc 0133     		adds	r3, r3, #1
- 166              	.LVL9:
-  93:Core/Src/main.c ****                 {
- 167              		.loc 1 93 44 is_stmt 0 discriminator 3 view .LVU41
- 168 00be EDE7     		b	.L6
- 169              	.L20:
-  93:Core/Src/main.c ****                 {
- 170              		.loc 1 93 44 discriminator 3 view .LVU42
- 171              	.LBE4:
-  96:Core/Src/main.c ****                 }
-  97:Core/Src/main.c ****                 flag0 = 1;
- 172              		.loc 1 97 17 is_stmt 1 view .LVU43
- 173              		.loc 1 97 23 is_stmt 0 view .LVU44
- 174 00c0 334B     		ldr	r3, .L23+20
- 175              	.LVL10:
- 176              		.loc 1 97 23 view .LVU45
- 177 00c2 0122     		movs	r2, #1
- 178 00c4 1A60     		str	r2, [r3]
- 179 00c6 55E0     		b	.L5
- 180              	.LVL11:
- 181              	.L9:
- 182              	.LBB5:
-  98:Core/Src/main.c ****             }
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 6
-
-
-  99:Core/Src/main.c ****         }
- 100:Core/Src/main.c **** 
- 101:Core/Src/main.c ****         for (int i = 0; i < cup; i++)
- 102:Core/Src/main.c ****         {
- 103:Core/Src/main.c ****             *(reg[i]) |= mask[i];
- 183              		.loc 1 103 13 is_stmt 1 view .LVU46
- 184              		.loc 1 103 18 is_stmt 0 view .LVU47
- 185 00c8 12AA     		add	r2, sp, #72
- 186 00ca 02EB8300 		add	r0, r2, r3, lsl #2
- 187 00ce 50F8181C 		ldr	r1, [r0, #-24]
- 188              		.loc 1 103 13 view .LVU48
- 189 00d2 0A68     		ldr	r2, [r1]
- 190              		.loc 1 103 30 view .LVU49
- 191 00d4 50F8480C 		ldr	r0, [r0, #-72]
- 192              		.loc 1 103 23 view .LVU50
- 193 00d8 0243     		orrs	r2, r2, r0
- 194 00da 0A60     		str	r2, [r1]
- 101:Core/Src/main.c ****         {
- 195              		.loc 1 101 35 is_stmt 1 discriminator 3 view .LVU51
- 196 00dc 0133     		adds	r3, r3, #1
- 197              	.LVL12:
- 198              	.L8:
- 101:Core/Src/main.c ****         {
- 199              		.loc 1 101 27 discriminator 1 view .LVU52
- 200 00de 2B4A     		ldr	r2, .L23+16
- 201 00e0 1268     		ldr	r2, [r2]
- 202 00e2 9A42     		cmp	r2, r3
- 203 00e4 F0DC     		bgt	.L9
- 204              	.LBE5:
- 205              	.LBB6:
- 104:Core/Src/main.c ****         }
- 105:Core/Src/main.c ****         for (int i = 0; i < delay * flag0 * T1; i++)
- 206              		.loc 1 105 18 is_stmt 0 view .LVU53
- 207 00e6 0022     		movs	r2, #0
- 208 00e8 00E0     		b	.L10
- 209              	.LVL13:
- 210              	.L11:
- 106:Core/Src/main.c ****         {
- 107:Core/Src/main.c ****         }
- 211              		.loc 1 107 9 is_stmt 1 view .LVU54
- 105:Core/Src/main.c ****         {
- 212              		.loc 1 105 50 discriminator 3 view .LVU55
- 213 00ea 0132     		adds	r2, r2, #1
- 214              	.LVL14:
- 215              	.L10:
- 105:Core/Src/main.c ****         {
- 216              		.loc 1 105 27 discriminator 1 view .LVU56
- 105:Core/Src/main.c ****         {
- 217              		.loc 1 105 35 is_stmt 0 discriminator 1 view .LVU57
- 218 00ec 294B     		ldr	r3, .L23+24
- 219 00ee 1B68     		ldr	r3, [r3]
- 220 00f0 2749     		ldr	r1, .L23+20
- 221 00f2 0968     		ldr	r1, [r1]
- 222 00f4 01FB03F3 		mul	r3, r1, r3
- 105:Core/Src/main.c ****         {
- 223              		.loc 1 105 43 discriminator 1 view .LVU58
- 224 00f8 2749     		ldr	r1, .L23+28
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 7
-
-
- 225 00fa 0968     		ldr	r1, [r1]
- 226 00fc 01FB03F3 		mul	r3, r1, r3
- 105:Core/Src/main.c ****         {
- 227              		.loc 1 105 27 discriminator 1 view .LVU59
- 228 0100 9342     		cmp	r3, r2
- 229 0102 F2DC     		bgt	.L11
- 230              	.LBE6:
- 231              	.LBB7:
- 108:Core/Src/main.c ****         for (int i = 0; i < cup; i++)
- 232              		.loc 1 108 18 view .LVU60
- 233 0104 0023     		movs	r3, #0
- 234 0106 0EE0     		b	.L12
- 235              	.LVL15:
- 236              	.L13:
- 109:Core/Src/main.c ****         {
- 110:Core/Src/main.c ****             *(reg[i]) |= mask[i + 6];
- 237              		.loc 1 110 13 is_stmt 1 view .LVU61
- 238              		.loc 1 110 18 is_stmt 0 view .LVU62
- 239 0108 12AA     		add	r2, sp, #72
- 240 010a 02EB8302 		add	r2, r2, r3, lsl #2
- 241 010e 52F8180C 		ldr	r0, [r2, #-24]
- 242              		.loc 1 110 13 view .LVU63
- 243 0112 0268     		ldr	r2, [r0]
- 244              		.loc 1 110 33 view .LVU64
- 245 0114 991D     		adds	r1, r3, #6
- 246              		.loc 1 110 30 view .LVU65
- 247 0116 12AC     		add	r4, sp, #72
- 248 0118 04EB8101 		add	r1, r4, r1, lsl #2
- 249 011c 51F8481C 		ldr	r1, [r1, #-72]
- 250              		.loc 1 110 23 view .LVU66
- 251 0120 0A43     		orrs	r2, r2, r1
- 252 0122 0260     		str	r2, [r0]
- 108:Core/Src/main.c ****         for (int i = 0; i < cup; i++)
- 253              		.loc 1 108 35 is_stmt 1 discriminator 3 view .LVU67
- 254 0124 0133     		adds	r3, r3, #1
- 255              	.LVL16:
- 256              	.L12:
- 108:Core/Src/main.c ****         for (int i = 0; i < cup; i++)
- 257              		.loc 1 108 27 discriminator 1 view .LVU68
- 258 0126 194A     		ldr	r2, .L23+16
- 259 0128 1268     		ldr	r2, [r2]
- 260 012a 9A42     		cmp	r2, r3
- 261 012c ECDC     		bgt	.L13
- 262              	.LBE7:
- 263              	.LBB8:
- 111:Core/Src/main.c ****         }
- 112:Core/Src/main.c ****         for (int i = 0; i < delay * flag0 * T0; i++)
- 264              		.loc 1 112 18 is_stmt 0 view .LVU69
- 265 012e 0022     		movs	r2, #0
- 266              	.LVL17:
- 267              	.L14:
- 268              		.loc 1 112 27 is_stmt 1 discriminator 1 view .LVU70
- 269              		.loc 1 112 35 is_stmt 0 discriminator 1 view .LVU71
- 270 0130 184B     		ldr	r3, .L23+24
- 271 0132 1B68     		ldr	r3, [r3]
- 272 0134 1649     		ldr	r1, .L23+20
- 273 0136 0968     		ldr	r1, [r1]
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 8
-
-
- 274 0138 01FB03F3 		mul	r3, r1, r3
- 275              		.loc 1 112 43 discriminator 1 view .LVU72
- 276 013c 1749     		ldr	r1, .L23+32
- 277 013e 0968     		ldr	r1, [r1]
- 278 0140 01FB03F3 		mul	r3, r1, r3
- 279              		.loc 1 112 27 discriminator 1 view .LVU73
- 280 0144 9342     		cmp	r3, r2
- 281 0146 17DC     		bgt	.L15
- 282              	.LVL18:
- 283              	.L16:
- 284              		.loc 1 112 27 discriminator 1 view .LVU74
- 285              	.LBE8:
-  75:Core/Src/main.c ****     {
- 286              		.loc 1 75 5 is_stmt 1 view .LVU75
-  77:Core/Src/main.c ****         {
- 287              		.loc 1 77 9 view .LVU76
-  77:Core/Src/main.c ****         {
- 288              		.loc 1 77 14 is_stmt 0 view .LVU77
- 289 0148 154B     		ldr	r3, .L23+36
- 290 014a 1B69     		ldr	r3, [r3, #16]
-  77:Core/Src/main.c ****         {
- 291              		.loc 1 77 12 view .LVU78
- 292 014c 13F0100F 		tst	r3, #16
- 293 0150 05D0     		beq	.L2
-  79:Core/Src/main.c ****             {
- 294              		.loc 1 79 13 is_stmt 1 view .LVU79
-  79:Core/Src/main.c ****             {
- 295              		.loc 1 79 17 is_stmt 0 view .LVU80
- 296 0152 0E4A     		ldr	r2, .L23+16
- 297 0154 1368     		ldr	r3, [r2]
- 298 0156 0133     		adds	r3, r3, #1
-  79:Core/Src/main.c ****             {
- 299              		.loc 1 79 16 view .LVU81
- 300 0158 1360     		str	r3, [r2]
- 301 015a 062B     		cmp	r3, #6
- 302 015c 9BDC     		bgt	.L21
- 303              	.L2:
-  89:Core/Src/main.c ****         {
- 304              		.loc 1 89 9 is_stmt 1 view .LVU82
-  89:Core/Src/main.c ****         {
- 305              		.loc 1 89 14 is_stmt 0 view .LVU83
- 306 015e 104B     		ldr	r3, .L23+36
- 307 0160 1B69     		ldr	r3, [r3, #16]
-  89:Core/Src/main.c ****         {
- 308              		.loc 1 89 12 view .LVU84
- 309 0162 13F0200F 		tst	r3, #32
- 310 0166 05D0     		beq	.L5
-  91:Core/Src/main.c ****             {
- 311              		.loc 1 91 13 is_stmt 1 view .LVU85
-  91:Core/Src/main.c ****             {
- 312              		.loc 1 91 17 is_stmt 0 view .LVU86
- 313 0168 094A     		ldr	r2, .L23+20
- 314 016a 1368     		ldr	r3, [r2]
- 315 016c 0133     		adds	r3, r3, #1
-  91:Core/Src/main.c ****             {
- 316              		.loc 1 91 16 view .LVU87
- 317 016e 1360     		str	r3, [r2]
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 9
-
-
- 318 0170 032B     		cmp	r3, #3
- 319 0172 92DC     		bgt	.L22
- 320              	.L5:
- 321              	.LBB9:
-  93:Core/Src/main.c ****                 {
- 322              		.loc 1 93 26 view .LVU88
- 323 0174 0023     		movs	r3, #0
- 324 0176 B2E7     		b	.L8
- 325              	.LVL19:
- 326              	.L15:
-  93:Core/Src/main.c ****                 {
- 327              		.loc 1 93 26 view .LVU89
- 328              	.LBE9:
- 329              	.LBB10:
- 113:Core/Src/main.c ****         {
- 114:Core/Src/main.c ****         }
- 330              		.loc 1 114 9 is_stmt 1 view .LVU90
- 112:Core/Src/main.c ****         {
- 331              		.loc 1 112 50 discriminator 3 view .LVU91
- 332 0178 0132     		adds	r2, r2, #1
- 333              	.LVL20:
- 112:Core/Src/main.c ****         {
- 334              		.loc 1 112 50 is_stmt 0 discriminator 3 view .LVU92
- 335 017a D9E7     		b	.L14
- 336              	.L24:
- 337              		.align	2
- 338              	.L23:
- 339 017c 00300240 		.word	1073885184
- 340 0180 00000240 		.word	1073872896
- 341 0184 18080240 		.word	1073874968
- 342 0188 00000000 		.word	.LANCHOR0
- 343 018c 00000000 		.word	cup
- 344 0190 00000000 		.word	flag0
- 345 0194 00000000 		.word	delay
- 346 0198 00000000 		.word	T1
- 347 019c 00000000 		.word	T0
- 348 01a0 00100240 		.word	1073876992
- 349              	.LBE10:
- 350              		.cfi_endproc
- 351              	.LFE130:
- 353              		.global	T0
- 354              		.section	.data.T0,"aw"
- 355              		.align	2
- 358              	T0:
- 359 0000 02000000 		.word	2
- 360              		.global	T1
- 361              		.section	.data.T1,"aw"
- 362              		.align	2
- 365              	T1:
- 366 0000 04000000 		.word	4
- 367              		.global	delay
- 368              		.section	.data.delay,"aw"
- 369              		.align	2
- 372              	delay:
- 373 0000 50C30000 		.word	50000
- 374              		.global	cup
- 375              		.section	.data.cup,"aw"
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 10
-
-
- 376              		.align	2
- 379              	cup:
- 380 0000 01000000 		.word	1
- 381              		.global	flag0
- 382              		.section	.data.flag0,"aw"
- 383              		.align	2
- 386              	flag0:
- 387 0000 01000000 		.word	1
- 388              		.section	.rodata
- 389              		.align	2
- 390              		.set	.LANCHOR0,. + 0
- 391              	.LC0:
- 392 0000 00010000 		.word	256
- 393 0004 00020000 		.word	512
- 394 0008 04000000 		.word	4
- 395 000c 08000000 		.word	8
- 396 0010 40000000 		.word	64
- 397 0014 80000000 		.word	128
- 398 0018 00000001 		.word	16777216
- 399 001c 00000002 		.word	33554432
- 400 0020 00000400 		.word	262144
- 401 0024 00000800 		.word	524288
- 402 0028 00004000 		.word	4194304
- 403 002c 00008000 		.word	8388608
- 404              		.text
- 405              	.Letext0:
- 406              		.file 2 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
- 407              		.file 3 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
- 408              		.file 4 "Core/Src/../Inc/Init.h"
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s 			page 11
+  43 0008 08BD     		pop	{r3, pc}
+  44              		.cfi_endproc
+  45              	.LFE130:
+  47              		.global	T0
+  48              		.section	.data.T0,"aw"
+  49              		.align	2
+  52              	T0:
+  53 0000 02000000 		.word	2
+  54              		.global	T1
+  55              		.section	.data.T1,"aw"
+  56              		.align	2
+  59              	T1:
+  60 0000 04000000 		.word	4
+  61              		.global	delay
+  62              		.section	.data.delay,"aw"
+  63              		.align	2
+  66              	delay:
+  67 0000 50C30000 		.word	50000
+  68              		.global	flag
+  69              		.section	.data.flag,"aw"
+  70              		.align	2
+  73              	flag:
+  74 0000 01000000 		.word	1
+  75              		.global	cup
+  76              		.section	.data.cup,"aw"
+  77              		.align	2
+  80              	cup:
+  81 0000 01000000 		.word	1
+  82              		.global	flag1
+  83              		.section	.data.flag1,"aw"
+  86              	flag1:
+  87 0000 01       		.byte	1
+  88              		.global	flag0
+  89              		.section	.data.flag0,"aw"
+  92              	flag0:
+  93 0000 01       		.byte	1
+  94              		.text
+  95              	.Letext0:
+  96              		.file 2 "Core/Src/../Inc/Init.h"
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:21     .text.main:00000000 $t
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:27     .text.main:00000000 main
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:339    .text.main:0000017c $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:379    .data.cup:00000000 cup
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:386    .data.flag0:00000000 flag0
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:372    .data.delay:00000000 delay
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:365    .data.T1:00000000 T1
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:358    .data.T0:00000000 T0
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:355    .data.T0:00000000 $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:362    .data.T1:00000000 $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:369    .data.delay:00000000 $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:376    .data.cup:00000000 $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:383    .data.flag0:00000000 $d
-C:\Users\671D~1\AppData\Local\Temp\cc8y62KY.s:389    .rodata:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:21     .text.main:00000000 $t
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:27     .text.main:00000000 main
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:52     .data.T0:00000000 T0
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:49     .data.T0:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:59     .data.T1:00000000 T1
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:56     .data.T1:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:66     .data.delay:00000000 delay
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:63     .data.delay:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:73     .data.flag:00000000 flag
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:70     .data.flag:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:80     .data.cup:00000000 cup
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:77     .data.cup:00000000 $d
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:86     .data.flag1:00000000 flag1
+C:\Users\671D~1\AppData\Local\Temp\ccMpU0CH.s:92     .data.flag0:00000000 flag0
 
 UNDEFINED SYMBOLS
-GPIO_G_Init
-GPIO_D_Init
+task2

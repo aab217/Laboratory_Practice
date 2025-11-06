@@ -12,3 +12,6 @@
 
 void GPIO_G_Init(void);
 void GPIO_D_Init(void);
+
+void task1(void);
+void task2(void);

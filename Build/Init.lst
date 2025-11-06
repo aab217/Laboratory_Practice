@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 1
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 1
    7:Core/Src/Init.c **** }
   50              		.loc 1 7 1 view .LVU7
   51 0026 7047     		bx	lr
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 2
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 2
 
 
   52              	.L3:
@@ -99,7 +99,7 @@ ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 1
   84 0014 1A68     		ldr	r2, [r3]
   85 0016 42F48042 		orr	r2, r2, #16384
   86 001a 1A60     		str	r2, [r3]
-  13:Core/Src/Init.c **** }...
+  13:Core/Src/Init.c **** }
   87              		.loc 1 13 1 is_stmt 0 view .LVU12
   88 001c 7047     		bx	lr
   89              	.L6:
@@ -109,21 +109,922 @@ ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 1
   93 0024 000C0240 		.word	1073875968
   94              		.cfi_endproc
   95              	.LFE131:
-  97              		.text
-  98              	.Letext0:
-  99              		.file 2 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
- 100              		.file 3 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
- 101              		.file 4 "Core/Src/../Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
-ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s 			page 3
+  97              		.section	.text.task1,"ax",%progbits
+  98              		.align	1
+  99              		.global	task1
+ 100              		.syntax unified
+ 101              		.thumb
+ 102              		.thumb_func
+ 104              	task1:
+ 105              	.LFB132:
+  14:Core/Src/Init.c **** 
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 3
+
+
+  15:Core/Src/Init.c **** extern bool flag0, flag1;
+  16:Core/Src/Init.c **** extern int cup, flag,delay, T1, T0;
+  17:Core/Src/Init.c **** 
+  18:Core/Src/Init.c **** void task1(void){
+ 106              		.loc 1 18 17 is_stmt 1 view -0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 72
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 0000 30B5     		push	{r4, r5, lr}
+ 111              	.LCFI0:
+ 112              		.cfi_def_cfa_offset 12
+ 113              		.cfi_offset 4, -12
+ 114              		.cfi_offset 5, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 93B0     		sub	sp, sp, #76
+ 117              	.LCFI1:
+ 118              		.cfi_def_cfa_offset 88
+  19:Core/Src/Init.c **** // OUTPUT
+  20:Core/Src/Init.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x04UL;    // RCC_PС ENABLE
+ 119              		.loc 1 20 5 view .LVU14
+ 120 0004 4F4C     		ldr	r4, .L26
+ 121 0006 D4F83038 		ldr	r3, [r4, #2096]
+ 122              		.loc 1 20 42 is_stmt 0 view .LVU15
+ 123 000a 43F00403 		orr	r3, r3, #4
+ 124 000e C4F83038 		str	r3, [r4, #2096]
+  21:Core/Src/Init.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x10000UL; // PС08_OP
+ 125              		.loc 1 21 5 is_stmt 1 view .LVU16
+ 126 0012 4D4A     		ldr	r2, .L26+4
+ 127 0014 D2F80038 		ldr	r3, [r2, #2048]
+ 128              		.loc 1 21 42 is_stmt 0 view .LVU17
+ 129 0018 43F48031 		orr	r1, r3, #65536
+ 130 001c C2F80018 		str	r1, [r2, #2048]
+  22:Core/Src/Init.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x40000UL; // PС09_OP
+ 131              		.loc 1 22 5 is_stmt 1 view .LVU18
+ 132              		.loc 1 22 42 is_stmt 0 view .LVU19
+ 133 0020 43F4A023 		orr	r3, r3, #327680
+ 134 0024 C2F80038 		str	r3, [r2, #2048]
+  23:Core/Src/Init.c **** 
+  24:Core/Src/Init.c ****     // OUTPUT
+  25:Core/Src/Init.c ****     GPIO_G_Init();
+ 135              		.loc 1 25 5 is_stmt 1 view .LVU20
+ 136 0028 FFF7FEFF 		bl	GPIO_G_Init
+ 137              	.LVL0:
+  26:Core/Src/Init.c **** 
+  27:Core/Src/Init.c ****     // OUTPUT
+  28:Core/Src/Init.c ****     GPIO_D_Init();
+ 138              		.loc 1 28 5 view .LVU21
+ 139 002c FFF7FEFF 		bl	GPIO_D_Init
+ 140              	.LVL1:
+  29:Core/Src/Init.c **** 
+  30:Core/Src/Init.c ****     // INPUT
+  31:Core/Src/Init.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x10UL; // RCC_PE ENABLE
+ 141              		.loc 1 31 5 view .LVU22
+ 142 0030 D4F83038 		ldr	r3, [r4, #2096]
+ 143              		.loc 1 31 42 is_stmt 0 view .LVU23
+ 144 0034 43F01003 		orr	r3, r3, #16
+ 145 0038 C4F83038 		str	r3, [r4, #2096]
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 4
+
+
+  32:Core/Src/Init.c **** 
+  33:Core/Src/Init.c ****     uint32_t *PORT_C = (uint32_t *)(0x40020800UL + 0x18UL);
+ 146              		.loc 1 33 5 is_stmt 1 view .LVU24
+ 147              	.LVL2:
+  34:Core/Src/Init.c ****     uint32_t *PORT_G = (uint32_t *)(0x40021800UL + 0x18UL);
+ 148              		.loc 1 34 5 view .LVU25
+  35:Core/Src/Init.c ****     uint32_t *PORT_D = (uint32_t *)(0x40020C00UL + 0x18UL);
+ 149              		.loc 1 35 5 view .LVU26
+  36:Core/Src/Init.c ****     uint32_t *reg[] = {PORT_C, PORT_C, PORT_G, PORT_G, PORT_D, PORT_D};
+ 150              		.loc 1 36 5 view .LVU27
+ 151              		.loc 1 36 15 is_stmt 0 view .LVU28
+ 152 003c 434B     		ldr	r3, .L26+8
+ 153 003e 0C93     		str	r3, [sp, #48]
+ 154 0040 0D93     		str	r3, [sp, #52]
+ 155 0042 03F58053 		add	r3, r3, #4096
+ 156 0046 0E93     		str	r3, [sp, #56]
+ 157 0048 0F93     		str	r3, [sp, #60]
+ 158 004a A3F54063 		sub	r3, r3, #3072
+ 159 004e 1093     		str	r3, [sp, #64]
+ 160 0050 1193     		str	r3, [sp, #68]
+  37:Core/Src/Init.c ****     uint32_t mask[] = {0x100UL, 0x200UL, 0x4UL, 0x8UL, 0x40UL, 0x80UL, 0x1000000UL, 0x2000000UL, 0x
+ 161              		.loc 1 37 5 is_stmt 1 view .LVU29
+ 162              		.loc 1 37 14 is_stmt 0 view .LVU30
+ 163 0052 6C46     		mov	r4, sp
+ 164 0054 3E4D     		ldr	r5, .L26+12
+ 165 0056 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 166 0058 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 167 005a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 168 005c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 169 005e 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 170 0062 84E80F00 		stm	r4, {r0, r1, r2, r3}
+  38:Core/Src/Init.c ****     int size = sizeof(reg) / sizeof(reg[0]);
+ 171              		.loc 1 38 5 is_stmt 1 view .LVU31
+ 172              	.LVL3:
+ 173              		.loc 1 38 5 is_stmt 0 view .LVU32
+ 174 0066 43E0     		b	.L21
+ 175              	.LVL4:
+ 176              	.L11:
+ 177              	.LBB2:
+  39:Core/Src/Init.c ****     while (1)
+  40:Core/Src/Init.c ****     {
+  41:Core/Src/Init.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x10UL) != 0)//PE5
+  42:Core/Src/Init.c ****         {
+  43:Core/Src/Init.c ****             if (++cup > 6)
+  44:Core/Src/Init.c ****             {
+  45:Core/Src/Init.c ****                 for (int i = 0; i < size; i++)
+  46:Core/Src/Init.c ****                 {
+  47:Core/Src/Init.c ****                     *(reg[i]) |= mask[i + 6];
+ 178              		.loc 1 47 21 is_stmt 1 view .LVU33
+ 179              		.loc 1 47 26 is_stmt 0 view .LVU34
+ 180 0068 12AA     		add	r2, sp, #72
+ 181 006a 02EB8302 		add	r2, r2, r3, lsl #2
+ 182 006e 52F8180C 		ldr	r0, [r2, #-24]
+ 183              		.loc 1 47 21 view .LVU35
+ 184 0072 0268     		ldr	r2, [r0]
+ 185              		.loc 1 47 41 view .LVU36
+ 186 0074 991D     		adds	r1, r3, #6
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 5
+
+
+ 187              		.loc 1 47 38 view .LVU37
+ 188 0076 12AC     		add	r4, sp, #72
+ 189 0078 04EB8101 		add	r1, r4, r1, lsl #2
+ 190 007c 51F8481C 		ldr	r1, [r1, #-72]
+ 191              		.loc 1 47 31 view .LVU38
+ 192 0080 0A43     		orrs	r2, r2, r1
+ 193 0082 0260     		str	r2, [r0]
+  45:Core/Src/Init.c ****                 {
+ 194              		.loc 1 45 44 is_stmt 1 discriminator 3 view .LVU39
+ 195 0084 0133     		adds	r3, r3, #1
+ 196              	.LVL5:
+ 197              	.L9:
+  45:Core/Src/Init.c ****                 {
+ 198              		.loc 1 45 35 discriminator 1 view .LVU40
+ 199 0086 052B     		cmp	r3, #5
+ 200 0088 EEDD     		ble	.L11
+ 201              	.LBE2:
+  48:Core/Src/Init.c ****                 }
+  49:Core/Src/Init.c ****                 cup = 1;
+ 202              		.loc 1 49 17 view .LVU41
+ 203              		.loc 1 49 21 is_stmt 0 view .LVU42
+ 204 008a 324B     		ldr	r3, .L26+16
+ 205              	.LVL6:
+ 206              		.loc 1 49 21 view .LVU43
+ 207 008c 0122     		movs	r2, #1
+ 208 008e 1A60     		str	r2, [r3]
+ 209 0090 39E0     		b	.L10
+ 210              	.LVL7:
+ 211              	.L25:
+ 212              	.LBB3:
+  45:Core/Src/Init.c ****                 {
+ 213              		.loc 1 45 26 view .LVU44
+ 214 0092 0023     		movs	r3, #0
+ 215 0094 F7E7     		b	.L9
+ 216              	.LVL8:
+ 217              	.L16:
+  45:Core/Src/Init.c ****                 {
+ 218              		.loc 1 45 26 view .LVU45
+ 219              	.LBE3:
+ 220              	.LBB4:
+  50:Core/Src/Init.c ****             }
+  51:Core/Src/Init.c ****             flag1 = !flag1;
+  52:Core/Src/Init.c ****         }
+  53:Core/Src/Init.c **** 
+  54:Core/Src/Init.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x20UL) != 0)//PE6
+  55:Core/Src/Init.c ****         {
+  56:Core/Src/Init.c ****             flag0 = !flag0;
+  57:Core/Src/Init.c ****             flag1 = !flag1;
+  58:Core/Src/Init.c ****         }
+  59:Core/Src/Init.c **** 
+  60:Core/Src/Init.c ****         if (flag1)
+  61:Core/Src/Init.c ****         {
+  62:Core/Src/Init.c ****             if (flag0)
+  63:Core/Src/Init.c ****             {
+  64:Core/Src/Init.c ****                 for (int i = 0; i < cup; i++)
+  65:Core/Src/Init.c ****                 {
+  66:Core/Src/Init.c ****                     *(reg[i]) |= mask[i];
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 6
+
+
+ 221              		.loc 1 66 21 is_stmt 1 view .LVU46
+ 222              		.loc 1 66 26 is_stmt 0 view .LVU47
+ 223 0096 12AA     		add	r2, sp, #72
+ 224 0098 02EB8300 		add	r0, r2, r3, lsl #2
+ 225 009c 50F8181C 		ldr	r1, [r0, #-24]
+ 226              		.loc 1 66 21 view .LVU48
+ 227 00a0 0A68     		ldr	r2, [r1]
+ 228              		.loc 1 66 38 view .LVU49
+ 229 00a2 50F8480C 		ldr	r0, [r0, #-72]
+ 230              		.loc 1 66 31 view .LVU50
+ 231 00a6 0243     		orrs	r2, r2, r0
+ 232 00a8 0A60     		str	r2, [r1]
+  64:Core/Src/Init.c ****                 {
+ 233              		.loc 1 64 43 is_stmt 1 discriminator 3 view .LVU51
+ 234 00aa 0133     		adds	r3, r3, #1
+ 235              	.LVL9:
+ 236              	.L14:
+  64:Core/Src/Init.c ****                 {
+ 237              		.loc 1 64 35 discriminator 1 view .LVU52
+ 238 00ac 294A     		ldr	r2, .L26+16
+ 239 00ae 1268     		ldr	r2, [r2]
+ 240 00b0 9A42     		cmp	r2, r3
+ 241 00b2 F0DC     		bgt	.L16
+ 242              	.LVL10:
+ 243              	.L17:
+  64:Core/Src/Init.c ****                 {
+ 244              		.loc 1 64 35 is_stmt 0 discriminator 1 view .LVU53
+ 245              	.LBE4:
+  67:Core/Src/Init.c ****                 }
+  68:Core/Src/Init.c ****             }
+  69:Core/Src/Init.c ****             else
+  70:Core/Src/Init.c ****             {
+  71:Core/Src/Init.c ****                 for (int i = 0; i < cup; i++)
+  72:Core/Src/Init.c ****                 {
+  73:Core/Src/Init.c ****                     *(reg[i]) |= mask[i + 6];
+  74:Core/Src/Init.c ****                 }
+  75:Core/Src/Init.c ****             }
+  76:Core/Src/Init.c ****             flag1 = !flag1;
+ 246              		.loc 1 76 13 is_stmt 1 view .LVU54
+ 247 00b4 84F00104 		eor	r4, r4, #1
+ 248              		.loc 1 76 19 is_stmt 0 view .LVU55
+ 249 00b8 274B     		ldr	r3, .L26+20
+ 250 00ba 1C70     		strb	r4, [r3]
+ 251              	.L13:
+  77:Core/Src/Init.c ****         }
+  78:Core/Src/Init.c ****         for (int j = 0U; j < 500000U; j++)
+ 252              		.loc 1 78 9 is_stmt 1 view .LVU56
+ 253              	.LBB5:
+ 254              		.loc 1 78 14 view .LVU57
+ 255              	.LVL11:
+ 256              		.loc 1 78 18 is_stmt 0 view .LVU58
+ 257 00bc 0023     		movs	r3, #0
+ 258              		.loc 1 78 9 view .LVU59
+ 259 00be 14E0     		b	.L19
+ 260              	.LVL12:
+ 261              	.L18:
+ 262              		.loc 1 78 9 view .LVU60
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 7
+
+
+ 263              	.LBE5:
+ 264              	.LBB6:
+  73:Core/Src/Init.c ****                 }
+ 265              		.loc 1 73 21 is_stmt 1 view .LVU61
+  73:Core/Src/Init.c ****                 }
+ 266              		.loc 1 73 26 is_stmt 0 view .LVU62
+ 267 00c0 12AA     		add	r2, sp, #72
+ 268 00c2 02EB8302 		add	r2, r2, r3, lsl #2
+ 269 00c6 52F8180C 		ldr	r0, [r2, #-24]
+  73:Core/Src/Init.c ****                 }
+ 270              		.loc 1 73 21 view .LVU63
+ 271 00ca 0268     		ldr	r2, [r0]
+  73:Core/Src/Init.c ****                 }
+ 272              		.loc 1 73 41 view .LVU64
+ 273 00cc 991D     		adds	r1, r3, #6
+  73:Core/Src/Init.c ****                 }
+ 274              		.loc 1 73 38 view .LVU65
+ 275 00ce 12AD     		add	r5, sp, #72
+ 276 00d0 05EB8101 		add	r1, r5, r1, lsl #2
+ 277 00d4 51F8481C 		ldr	r1, [r1, #-72]
+  73:Core/Src/Init.c ****                 }
+ 278              		.loc 1 73 31 view .LVU66
+ 279 00d8 0A43     		orrs	r2, r2, r1
+ 280 00da 0260     		str	r2, [r0]
+  71:Core/Src/Init.c ****                 {
+ 281              		.loc 1 71 43 is_stmt 1 discriminator 3 view .LVU67
+ 282 00dc 0133     		adds	r3, r3, #1
+ 283              	.LVL13:
+ 284              	.L15:
+  71:Core/Src/Init.c ****                 {
+ 285              		.loc 1 71 35 discriminator 1 view .LVU68
+ 286 00de 1D4A     		ldr	r2, .L26+16
+ 287 00e0 1268     		ldr	r2, [r2]
+ 288 00e2 9A42     		cmp	r2, r3
+ 289 00e4 ECDC     		bgt	.L18
+ 290 00e6 E5E7     		b	.L17
+ 291              	.LVL14:
+ 292              	.L20:
+  71:Core/Src/Init.c ****                 {
+ 293              		.loc 1 71 35 is_stmt 0 discriminator 1 view .LVU69
+ 294              	.LBE6:
+ 295              	.LBB7:
+  79:Core/Src/Init.c ****         {
+  80:Core/Src/Init.c ****         }
+ 296              		.loc 1 80 9 is_stmt 1 view .LVU70
+  78:Core/Src/Init.c ****         {
+ 297              		.loc 1 78 40 discriminator 3 view .LVU71
+ 298 00e8 0133     		adds	r3, r3, #1
+ 299              	.LVL15:
+ 300              	.L19:
+  78:Core/Src/Init.c ****         {
+ 301              		.loc 1 78 28 discriminator 1 view .LVU72
+ 302 00ea 1C4A     		ldr	r2, .L26+24
+ 303 00ec 9342     		cmp	r3, r2
+ 304 00ee FBD9     		bls	.L20
+ 305              	.LVL16:
+ 306              	.L21:
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 8
+
+
+  78:Core/Src/Init.c ****         {
+ 307              		.loc 1 78 28 is_stmt 0 discriminator 1 view .LVU73
+ 308              	.LBE7:
+  39:Core/Src/Init.c ****     {
+ 309              		.loc 1 39 5 is_stmt 1 view .LVU74
+  41:Core/Src/Init.c ****         {
+ 310              		.loc 1 41 9 view .LVU75
+  41:Core/Src/Init.c ****         {
+ 311              		.loc 1 41 14 is_stmt 0 view .LVU76
+ 312 00f0 1B4B     		ldr	r3, .L26+28
+ 313 00f2 1B69     		ldr	r3, [r3, #16]
+  41:Core/Src/Init.c ****         {
+ 314              		.loc 1 41 12 view .LVU77
+ 315 00f4 13F0100F 		tst	r3, #16
+ 316 00f8 0AD0     		beq	.L8
+  43:Core/Src/Init.c ****             {
+ 317              		.loc 1 43 13 is_stmt 1 view .LVU78
+  43:Core/Src/Init.c ****             {
+ 318              		.loc 1 43 17 is_stmt 0 view .LVU79
+ 319 00fa 164A     		ldr	r2, .L26+16
+ 320 00fc 1368     		ldr	r3, [r2]
+ 321 00fe 0133     		adds	r3, r3, #1
+  43:Core/Src/Init.c ****             {
+ 322              		.loc 1 43 16 view .LVU80
+ 323 0100 1360     		str	r3, [r2]
+ 324 0102 062B     		cmp	r3, #6
+ 325 0104 C5DC     		bgt	.L25
+ 326              	.L10:
+  51:Core/Src/Init.c ****         }
+ 327              		.loc 1 51 13 is_stmt 1 view .LVU81
+ 328 0106 144A     		ldr	r2, .L26+20
+ 329 0108 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 330 010a 83F00103 		eor	r3, r3, #1
+  51:Core/Src/Init.c ****         }
+ 331              		.loc 1 51 19 is_stmt 0 view .LVU82
+ 332 010e 1370     		strb	r3, [r2]
+ 333              	.L8:
+  54:Core/Src/Init.c ****         {
+ 334              		.loc 1 54 9 is_stmt 1 view .LVU83
+  54:Core/Src/Init.c ****         {
+ 335              		.loc 1 54 14 is_stmt 0 view .LVU84
+ 336 0110 134B     		ldr	r3, .L26+28
+ 337 0112 1B69     		ldr	r3, [r3, #16]
+  54:Core/Src/Init.c ****         {
+ 338              		.loc 1 54 12 view .LVU85
+ 339 0114 13F0200F 		tst	r3, #32
+ 340 0118 09D0     		beq	.L12
+  56:Core/Src/Init.c ****             flag1 = !flag1;
+ 341              		.loc 1 56 13 is_stmt 1 view .LVU86
+ 342 011a 124A     		ldr	r2, .L26+32
+ 343 011c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 344 011e 83F00103 		eor	r3, r3, #1
+  56:Core/Src/Init.c ****             flag1 = !flag1;
+ 345              		.loc 1 56 19 is_stmt 0 view .LVU87
+ 346 0122 1370     		strb	r3, [r2]
+  57:Core/Src/Init.c ****         }
+ 347              		.loc 1 57 13 is_stmt 1 view .LVU88
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 9
+
+
+ 348 0124 0C4A     		ldr	r2, .L26+20
+ 349 0126 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 350 0128 83F00103 		eor	r3, r3, #1
+  57:Core/Src/Init.c ****         }
+ 351              		.loc 1 57 19 is_stmt 0 view .LVU89
+ 352 012c 1370     		strb	r3, [r2]
+ 353              	.L12:
+  60:Core/Src/Init.c ****         {
+ 354              		.loc 1 60 9 is_stmt 1 view .LVU90
+  60:Core/Src/Init.c ****         {
+ 355              		.loc 1 60 13 is_stmt 0 view .LVU91
+ 356 012e 0A4B     		ldr	r3, .L26+20
+ 357 0130 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+  60:Core/Src/Init.c ****         {
+ 358              		.loc 1 60 12 view .LVU92
+ 359 0132 002C     		cmp	r4, #0
+ 360 0134 C2D0     		beq	.L13
+  62:Core/Src/Init.c ****             {
+ 361              		.loc 1 62 13 is_stmt 1 view .LVU93
+  62:Core/Src/Init.c ****             {
+ 362              		.loc 1 62 17 is_stmt 0 view .LVU94
+ 363 0136 0B4B     		ldr	r3, .L26+32
+ 364 0138 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  62:Core/Src/Init.c ****             {
+ 365              		.loc 1 62 16 view .LVU95
+ 366 013a 002B     		cmp	r3, #0
+ 367 013c CFD0     		beq	.L15
+ 368              	.LBB8:
+  64:Core/Src/Init.c ****                 {
+ 369              		.loc 1 64 26 view .LVU96
+ 370 013e 0023     		movs	r3, #0
+ 371 0140 B4E7     		b	.L14
+ 372              	.L27:
+ 373 0142 00BF     		.align	2
+ 374              	.L26:
+ 375 0144 00300240 		.word	1073885184
+ 376 0148 00000240 		.word	1073872896
+ 377 014c 18080240 		.word	1073874968
+ 378 0150 00000000 		.word	.LANCHOR0
+ 379 0154 00000000 		.word	cup
+ 380 0158 00000000 		.word	flag1
+ 381 015c 1FA10700 		.word	499999
+ 382 0160 00100240 		.word	1073876992
+ 383 0164 00000000 		.word	flag0
+ 384              	.LBE8:
+ 385              		.cfi_endproc
+ 386              	.LFE132:
+ 388              		.section	.text.task2,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	task2
+ 391              		.syntax unified
+ 392              		.thumb
+ 393              		.thumb_func
+ 395              	task2:
+ 396              	.LFB133:
+  81:Core/Src/Init.c ****     }
+  82:Core/Src/Init.c **** }
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 10
+
+
+  83:Core/Src/Init.c **** 
+  84:Core/Src/Init.c **** void task2(void){
+ 397              		.loc 1 84 17 is_stmt 1 view -0
+ 398              		.cfi_startproc
+ 399              		@ args = 0, pretend = 0, frame = 72
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401 0000 10B5     		push	{r4, lr}
+ 402              	.LCFI2:
+ 403              		.cfi_def_cfa_offset 8
+ 404              		.cfi_offset 4, -8
+ 405              		.cfi_offset 14, -4
+ 406 0002 92B0     		sub	sp, sp, #72
+ 407              	.LCFI3:
+ 408              		.cfi_def_cfa_offset 80
+  85:Core/Src/Init.c ****     // OUTPUT
+  86:Core/Src/Init.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x04UL;    // RCC_PС ENABLE
+ 409              		.loc 1 86 5 view .LVU98
+ 410 0004 5D4C     		ldr	r4, .L50
+ 411 0006 D4F83038 		ldr	r3, [r4, #2096]
+ 412              		.loc 1 86 42 is_stmt 0 view .LVU99
+ 413 000a 43F00403 		orr	r3, r3, #4
+ 414 000e C4F83038 		str	r3, [r4, #2096]
+  87:Core/Src/Init.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x10000UL; // PС08_OP
+ 415              		.loc 1 87 5 is_stmt 1 view .LVU100
+ 416 0012 5B4A     		ldr	r2, .L50+4
+ 417 0014 D2F80038 		ldr	r3, [r2, #2048]
+ 418              		.loc 1 87 42 is_stmt 0 view .LVU101
+ 419 0018 43F48031 		orr	r1, r3, #65536
+ 420 001c C2F80018 		str	r1, [r2, #2048]
+  88:Core/Src/Init.c ****     *(uint32_t *)(0x40020800UL + 0x00UL) |= 0x40000UL; // PС09_OP
+ 421              		.loc 1 88 5 is_stmt 1 view .LVU102
+ 422              		.loc 1 88 42 is_stmt 0 view .LVU103
+ 423 0020 43F4A023 		orr	r3, r3, #327680
+ 424 0024 C2F80038 		str	r3, [r2, #2048]
+  89:Core/Src/Init.c **** 
+  90:Core/Src/Init.c ****     // OUTPUT
+  91:Core/Src/Init.c ****     GPIO_G_Init();
+ 425              		.loc 1 91 5 is_stmt 1 view .LVU104
+ 426 0028 FFF7FEFF 		bl	GPIO_G_Init
+ 427              	.LVL17:
+  92:Core/Src/Init.c **** 
+  93:Core/Src/Init.c ****     // OUTPUT
+  94:Core/Src/Init.c ****     GPIO_D_Init();
+ 428              		.loc 1 94 5 view .LVU105
+ 429 002c FFF7FEFF 		bl	GPIO_D_Init
+ 430              	.LVL18:
+  95:Core/Src/Init.c **** 
+  96:Core/Src/Init.c ****     // INPUT
+  97:Core/Src/Init.c ****     *(uint32_t *)(0x40023800UL + 0x30UL) |= 0x10UL; // RCC_PE ENABLE
+ 431              		.loc 1 97 5 view .LVU106
+ 432 0030 D4F83038 		ldr	r3, [r4, #2096]
+ 433              		.loc 1 97 42 is_stmt 0 view .LVU107
+ 434 0034 43F01003 		orr	r3, r3, #16
+ 435 0038 C4F83038 		str	r3, [r4, #2096]
+  98:Core/Src/Init.c **** 
+  99:Core/Src/Init.c ****     uint32_t *PORT_C = (uint32_t *)(0x40020800UL + 0x18UL);
+ 436              		.loc 1 99 5 is_stmt 1 view .LVU108
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 11
+
+
+ 437              	.LVL19:
+ 100:Core/Src/Init.c ****     uint32_t *PORT_G = (uint32_t *)(0x40021800UL + 0x18UL);
+ 438              		.loc 1 100 5 view .LVU109
+ 101:Core/Src/Init.c ****     uint32_t *PORT_D = (uint32_t *)(0x40020C00UL + 0x18UL);
+ 439              		.loc 1 101 5 view .LVU110
+ 102:Core/Src/Init.c ****     uint32_t *reg[] = {PORT_C, PORT_C, PORT_G, PORT_G, PORT_D, PORT_D};
+ 440              		.loc 1 102 5 view .LVU111
+ 441              		.loc 1 102 15 is_stmt 0 view .LVU112
+ 442 003c 514B     		ldr	r3, .L50+8
+ 443 003e 0C93     		str	r3, [sp, #48]
+ 444 0040 0D93     		str	r3, [sp, #52]
+ 445 0042 03F58053 		add	r3, r3, #4096
+ 446 0046 0E93     		str	r3, [sp, #56]
+ 447 0048 0F93     		str	r3, [sp, #60]
+ 448 004a A3F54063 		sub	r3, r3, #3072
+ 449 004e 1093     		str	r3, [sp, #64]
+ 450 0050 1193     		str	r3, [sp, #68]
+ 103:Core/Src/Init.c ****     uint32_t mask[] = {0x100UL, 0x200UL, 0x4UL, 0x8UL, 0x40UL, 0x80UL, 0x1000000UL, 0x2000000UL, 0x
+ 451              		.loc 1 103 5 is_stmt 1 view .LVU113
+ 452              		.loc 1 103 14 is_stmt 0 view .LVU114
+ 453 0052 EC46     		mov	ip, sp
+ 454 0054 4C4C     		ldr	r4, .L50+12
+ 455 0056 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 456 0058 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 457 005c 0FCC     		ldmia	r4!, {r0, r1, r2, r3}
+ 458 005e ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 459 0062 94E80F00 		ldm	r4, {r0, r1, r2, r3}
+ 460 0066 8CE80F00 		stm	ip, {r0, r1, r2, r3}
+ 104:Core/Src/Init.c ****     int size = sizeof(reg) / sizeof(reg[0]);
+ 461              		.loc 1 104 5 is_stmt 1 view .LVU115
+ 462              	.LVL20:
+ 463              		.loc 1 104 5 is_stmt 0 view .LVU116
+ 464 006a 6DE0     		b	.L43
+ 465              	.LVL21:
+ 466              	.L31:
+ 467              	.LBB9:
+ 105:Core/Src/Init.c **** 
+ 106:Core/Src/Init.c ****     while (1)
+ 107:Core/Src/Init.c ****     {
+ 108:Core/Src/Init.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x10UL) != 0)//PE5
+ 109:Core/Src/Init.c ****         {
+ 110:Core/Src/Init.c ****             if (++cup > 6)
+ 111:Core/Src/Init.c ****             {
+ 112:Core/Src/Init.c ****                 for (int i = 0; i < size; i++)
+ 113:Core/Src/Init.c ****                 {
+ 114:Core/Src/Init.c ****                     *(reg[i]) |= mask[i + 6];
+ 468              		.loc 1 114 21 is_stmt 1 view .LVU117
+ 469              		.loc 1 114 26 is_stmt 0 view .LVU118
+ 470 006c 12AA     		add	r2, sp, #72
+ 471 006e 02EB8302 		add	r2, r2, r3, lsl #2
+ 472 0072 52F8180C 		ldr	r0, [r2, #-24]
+ 473              		.loc 1 114 21 view .LVU119
+ 474 0076 0268     		ldr	r2, [r0]
+ 475              		.loc 1 114 41 view .LVU120
+ 476 0078 991D     		adds	r1, r3, #6
+ 477              		.loc 1 114 38 view .LVU121
+ 478 007a 12AC     		add	r4, sp, #72
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 12
+
+
+ 479 007c 04EB8101 		add	r1, r4, r1, lsl #2
+ 480 0080 51F8481C 		ldr	r1, [r1, #-72]
+ 481              		.loc 1 114 31 view .LVU122
+ 482 0084 0A43     		orrs	r2, r2, r1
+ 483 0086 0260     		str	r2, [r0]
+ 112:Core/Src/Init.c ****                 {
+ 484              		.loc 1 112 44 is_stmt 1 discriminator 3 view .LVU123
+ 485 0088 0133     		adds	r3, r3, #1
+ 486              	.LVL22:
+ 487              	.L30:
+ 112:Core/Src/Init.c ****                 {
+ 488              		.loc 1 112 35 discriminator 1 view .LVU124
+ 489 008a 052B     		cmp	r3, #5
+ 490 008c EEDD     		ble	.L31
+ 491              	.LBE9:
+ 115:Core/Src/Init.c ****                 }
+ 116:Core/Src/Init.c ****                 cup = 1;
+ 492              		.loc 1 116 17 view .LVU125
+ 493              		.loc 1 116 21 is_stmt 0 view .LVU126
+ 494 008e 3F4B     		ldr	r3, .L50+16
+ 495              	.LVL23:
+ 496              		.loc 1 116 21 view .LVU127
+ 497 0090 0122     		movs	r2, #1
+ 498 0092 1A60     		str	r2, [r3]
+ 499 0094 63E0     		b	.L29
+ 500              	.LVL24:
+ 501              	.L48:
+ 502              	.LBB10:
+ 112:Core/Src/Init.c ****                 {
+ 503              		.loc 1 112 26 view .LVU128
+ 504 0096 0023     		movs	r3, #0
+ 505 0098 F7E7     		b	.L30
+ 506              	.L49:
+ 507              	.LBE10:
+ 508              	.LBB11:
+ 117:Core/Src/Init.c ****             }
+ 118:Core/Src/Init.c ****         }
+ 119:Core/Src/Init.c **** 
+ 120:Core/Src/Init.c ****         if ((*(uint32_t *)(0x40021000UL + 0x10UL) & 0x20UL) != 0)//PE6
+ 121:Core/Src/Init.c ****         {
+ 122:Core/Src/Init.c ****             if (++flag > 3)
+ 123:Core/Src/Init.c ****             {
+ 124:Core/Src/Init.c ****                 for (int i = 0; i < size; i++)
+ 509              		.loc 1 124 26 view .LVU129
+ 510 009a 0023     		movs	r3, #0
+ 511              	.L33:
+ 512              	.LVL25:
+ 513              		.loc 1 124 35 is_stmt 1 discriminator 1 view .LVU130
+ 514 009c 052B     		cmp	r3, #5
+ 515 009e 0FDC     		bgt	.L47
+ 125:Core/Src/Init.c ****                 {
+ 126:Core/Src/Init.c ****                     *(reg[i]) |= mask[i + 6];
+ 516              		.loc 1 126 21 view .LVU131
+ 517              		.loc 1 126 26 is_stmt 0 view .LVU132
+ 518 00a0 12AA     		add	r2, sp, #72
+ 519 00a2 02EB8302 		add	r2, r2, r3, lsl #2
+ 520 00a6 52F8180C 		ldr	r0, [r2, #-24]
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 13
+
+
+ 521              		.loc 1 126 21 view .LVU133
+ 522 00aa 0268     		ldr	r2, [r0]
+ 523              		.loc 1 126 41 view .LVU134
+ 524 00ac 991D     		adds	r1, r3, #6
+ 525              		.loc 1 126 38 view .LVU135
+ 526 00ae 12AC     		add	r4, sp, #72
+ 527 00b0 04EB8101 		add	r1, r4, r1, lsl #2
+ 528 00b4 51F8481C 		ldr	r1, [r1, #-72]
+ 529              		.loc 1 126 31 view .LVU136
+ 530 00b8 0A43     		orrs	r2, r2, r1
+ 531 00ba 0260     		str	r2, [r0]
+ 124:Core/Src/Init.c ****                 {
+ 532              		.loc 1 124 44 is_stmt 1 discriminator 3 view .LVU137
+ 533 00bc 0133     		adds	r3, r3, #1
+ 534              	.LVL26:
+ 124:Core/Src/Init.c ****                 {
+ 535              		.loc 1 124 44 is_stmt 0 discriminator 3 view .LVU138
+ 536 00be EDE7     		b	.L33
+ 537              	.L47:
+ 124:Core/Src/Init.c ****                 {
+ 538              		.loc 1 124 44 discriminator 3 view .LVU139
+ 539              	.LBE11:
+ 127:Core/Src/Init.c ****                 }
+ 128:Core/Src/Init.c ****                 flag = 1;
+ 540              		.loc 1 128 17 is_stmt 1 view .LVU140
+ 541              		.loc 1 128 22 is_stmt 0 view .LVU141
+ 542 00c0 334B     		ldr	r3, .L50+20
+ 543              	.LVL27:
+ 544              		.loc 1 128 22 view .LVU142
+ 545 00c2 0122     		movs	r2, #1
+ 546 00c4 1A60     		str	r2, [r3]
+ 547 00c6 55E0     		b	.L32
+ 548              	.LVL28:
+ 549              	.L36:
+ 550              	.LBB12:
+ 129:Core/Src/Init.c ****             }
+ 130:Core/Src/Init.c ****         }
+ 131:Core/Src/Init.c **** 
+ 132:Core/Src/Init.c ****         for (int i = 0; i < cup; i++)
+ 133:Core/Src/Init.c ****         {
+ 134:Core/Src/Init.c ****             *(reg[i]) |= mask[i];
+ 551              		.loc 1 134 13 is_stmt 1 view .LVU143
+ 552              		.loc 1 134 18 is_stmt 0 view .LVU144
+ 553 00c8 12AA     		add	r2, sp, #72
+ 554 00ca 02EB8300 		add	r0, r2, r3, lsl #2
+ 555 00ce 50F8181C 		ldr	r1, [r0, #-24]
+ 556              		.loc 1 134 13 view .LVU145
+ 557 00d2 0A68     		ldr	r2, [r1]
+ 558              		.loc 1 134 30 view .LVU146
+ 559 00d4 50F8480C 		ldr	r0, [r0, #-72]
+ 560              		.loc 1 134 23 view .LVU147
+ 561 00d8 0243     		orrs	r2, r2, r0
+ 562 00da 0A60     		str	r2, [r1]
+ 132:Core/Src/Init.c ****         {
+ 563              		.loc 1 132 35 is_stmt 1 discriminator 3 view .LVU148
+ 564 00dc 0133     		adds	r3, r3, #1
+ 565              	.LVL29:
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 14
+
+
+ 566              	.L35:
+ 132:Core/Src/Init.c ****         {
+ 567              		.loc 1 132 27 discriminator 1 view .LVU149
+ 568 00de 2B4A     		ldr	r2, .L50+16
+ 569 00e0 1268     		ldr	r2, [r2]
+ 570 00e2 9A42     		cmp	r2, r3
+ 571 00e4 F0DC     		bgt	.L36
+ 572              	.LBE12:
+ 573              	.LBB13:
+ 135:Core/Src/Init.c ****         }
+ 136:Core/Src/Init.c ****         for (int i = 0; i < delay * flag * T1; i++)
+ 574              		.loc 1 136 18 is_stmt 0 view .LVU150
+ 575 00e6 0022     		movs	r2, #0
+ 576 00e8 00E0     		b	.L37
+ 577              	.LVL30:
+ 578              	.L38:
+ 137:Core/Src/Init.c ****         {
+ 138:Core/Src/Init.c ****         }
+ 579              		.loc 1 138 9 is_stmt 1 view .LVU151
+ 136:Core/Src/Init.c ****         {
+ 580              		.loc 1 136 49 discriminator 3 view .LVU152
+ 581 00ea 0132     		adds	r2, r2, #1
+ 582              	.LVL31:
+ 583              	.L37:
+ 136:Core/Src/Init.c ****         {
+ 584              		.loc 1 136 27 discriminator 1 view .LVU153
+ 136:Core/Src/Init.c ****         {
+ 585              		.loc 1 136 35 is_stmt 0 discriminator 1 view .LVU154
+ 586 00ec 294B     		ldr	r3, .L50+24
+ 587 00ee 1B68     		ldr	r3, [r3]
+ 588 00f0 2749     		ldr	r1, .L50+20
+ 589 00f2 0968     		ldr	r1, [r1]
+ 590 00f4 01FB03F3 		mul	r3, r1, r3
+ 136:Core/Src/Init.c ****         {
+ 591              		.loc 1 136 42 discriminator 1 view .LVU155
+ 592 00f8 2749     		ldr	r1, .L50+28
+ 593 00fa 0968     		ldr	r1, [r1]
+ 594 00fc 01FB03F3 		mul	r3, r1, r3
+ 136:Core/Src/Init.c ****         {
+ 595              		.loc 1 136 27 discriminator 1 view .LVU156
+ 596 0100 9342     		cmp	r3, r2
+ 597 0102 F2DC     		bgt	.L38
+ 598              	.LBE13:
+ 599              	.LBB14:
+ 139:Core/Src/Init.c ****         for (int i = 0; i < cup; i++)
+ 600              		.loc 1 139 18 view .LVU157
+ 601 0104 0023     		movs	r3, #0
+ 602 0106 0EE0     		b	.L39
+ 603              	.LVL32:
+ 604              	.L40:
+ 140:Core/Src/Init.c ****         {
+ 141:Core/Src/Init.c ****             *(reg[i]) |= mask[i + 6];
+ 605              		.loc 1 141 13 is_stmt 1 view .LVU158
+ 606              		.loc 1 141 18 is_stmt 0 view .LVU159
+ 607 0108 12AA     		add	r2, sp, #72
+ 608 010a 02EB8302 		add	r2, r2, r3, lsl #2
+ 609 010e 52F8180C 		ldr	r0, [r2, #-24]
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 15
+
+
+ 610              		.loc 1 141 13 view .LVU160
+ 611 0112 0268     		ldr	r2, [r0]
+ 612              		.loc 1 141 33 view .LVU161
+ 613 0114 991D     		adds	r1, r3, #6
+ 614              		.loc 1 141 30 view .LVU162
+ 615 0116 12AC     		add	r4, sp, #72
+ 616 0118 04EB8101 		add	r1, r4, r1, lsl #2
+ 617 011c 51F8481C 		ldr	r1, [r1, #-72]
+ 618              		.loc 1 141 23 view .LVU163
+ 619 0120 0A43     		orrs	r2, r2, r1
+ 620 0122 0260     		str	r2, [r0]
+ 139:Core/Src/Init.c ****         for (int i = 0; i < cup; i++)
+ 621              		.loc 1 139 35 is_stmt 1 discriminator 3 view .LVU164
+ 622 0124 0133     		adds	r3, r3, #1
+ 623              	.LVL33:
+ 624              	.L39:
+ 139:Core/Src/Init.c ****         for (int i = 0; i < cup; i++)
+ 625              		.loc 1 139 27 discriminator 1 view .LVU165
+ 626 0126 194A     		ldr	r2, .L50+16
+ 627 0128 1268     		ldr	r2, [r2]
+ 628 012a 9A42     		cmp	r2, r3
+ 629 012c ECDC     		bgt	.L40
+ 630              	.LBE14:
+ 631              	.LBB15:
+ 142:Core/Src/Init.c ****         }
+ 143:Core/Src/Init.c ****         for (int i = 0; i < delay * flag * T0; i++)
+ 632              		.loc 1 143 18 is_stmt 0 view .LVU166
+ 633 012e 0022     		movs	r2, #0
+ 634              	.LVL34:
+ 635              	.L41:
+ 636              		.loc 1 143 27 is_stmt 1 discriminator 1 view .LVU167
+ 637              		.loc 1 143 35 is_stmt 0 discriminator 1 view .LVU168
+ 638 0130 184B     		ldr	r3, .L50+24
+ 639 0132 1B68     		ldr	r3, [r3]
+ 640 0134 1649     		ldr	r1, .L50+20
+ 641 0136 0968     		ldr	r1, [r1]
+ 642 0138 01FB03F3 		mul	r3, r1, r3
+ 643              		.loc 1 143 42 discriminator 1 view .LVU169
+ 644 013c 1749     		ldr	r1, .L50+32
+ 645 013e 0968     		ldr	r1, [r1]
+ 646 0140 01FB03F3 		mul	r3, r1, r3
+ 647              		.loc 1 143 27 discriminator 1 view .LVU170
+ 648 0144 9342     		cmp	r3, r2
+ 649 0146 17DC     		bgt	.L42
+ 650              	.LVL35:
+ 651              	.L43:
+ 652              		.loc 1 143 27 discriminator 1 view .LVU171
+ 653              	.LBE15:
+ 106:Core/Src/Init.c ****     {
+ 654              		.loc 1 106 5 is_stmt 1 view .LVU172
+ 108:Core/Src/Init.c ****         {
+ 655              		.loc 1 108 9 view .LVU173
+ 108:Core/Src/Init.c ****         {
+ 656              		.loc 1 108 14 is_stmt 0 view .LVU174
+ 657 0148 154B     		ldr	r3, .L50+36
+ 658 014a 1B69     		ldr	r3, [r3, #16]
+ 108:Core/Src/Init.c ****         {
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 16
+
+
+ 659              		.loc 1 108 12 view .LVU175
+ 660 014c 13F0100F 		tst	r3, #16
+ 661 0150 05D0     		beq	.L29
+ 110:Core/Src/Init.c ****             {
+ 662              		.loc 1 110 13 is_stmt 1 view .LVU176
+ 110:Core/Src/Init.c ****             {
+ 663              		.loc 1 110 17 is_stmt 0 view .LVU177
+ 664 0152 0E4A     		ldr	r2, .L50+16
+ 665 0154 1368     		ldr	r3, [r2]
+ 666 0156 0133     		adds	r3, r3, #1
+ 110:Core/Src/Init.c ****             {
+ 667              		.loc 1 110 16 view .LVU178
+ 668 0158 1360     		str	r3, [r2]
+ 669 015a 062B     		cmp	r3, #6
+ 670 015c 9BDC     		bgt	.L48
+ 671              	.L29:
+ 120:Core/Src/Init.c ****         {
+ 672              		.loc 1 120 9 is_stmt 1 view .LVU179
+ 120:Core/Src/Init.c ****         {
+ 673              		.loc 1 120 14 is_stmt 0 view .LVU180
+ 674 015e 104B     		ldr	r3, .L50+36
+ 675 0160 1B69     		ldr	r3, [r3, #16]
+ 120:Core/Src/Init.c ****         {
+ 676              		.loc 1 120 12 view .LVU181
+ 677 0162 13F0200F 		tst	r3, #32
+ 678 0166 05D0     		beq	.L32
+ 122:Core/Src/Init.c ****             {
+ 679              		.loc 1 122 13 is_stmt 1 view .LVU182
+ 122:Core/Src/Init.c ****             {
+ 680              		.loc 1 122 17 is_stmt 0 view .LVU183
+ 681 0168 094A     		ldr	r2, .L50+20
+ 682 016a 1368     		ldr	r3, [r2]
+ 683 016c 0133     		adds	r3, r3, #1
+ 122:Core/Src/Init.c ****             {
+ 684              		.loc 1 122 16 view .LVU184
+ 685 016e 1360     		str	r3, [r2]
+ 686 0170 032B     		cmp	r3, #3
+ 687 0172 92DC     		bgt	.L49
+ 688              	.L32:
+ 689              	.LBB16:
+ 124:Core/Src/Init.c ****                 {
+ 690              		.loc 1 124 26 view .LVU185
+ 691 0174 0023     		movs	r3, #0
+ 692 0176 B2E7     		b	.L35
+ 693              	.LVL36:
+ 694              	.L42:
+ 124:Core/Src/Init.c ****                 {
+ 695              		.loc 1 124 26 view .LVU186
+ 696              	.LBE16:
+ 697              	.LBB17:
+ 144:Core/Src/Init.c ****         {
+ 145:Core/Src/Init.c ****         }
+ 698              		.loc 1 145 9 is_stmt 1 view .LVU187
+ 143:Core/Src/Init.c ****         {
+ 699              		.loc 1 143 49 discriminator 3 view .LVU188
+ 700 0178 0132     		adds	r2, r2, #1
+ 701              	.LVL37:
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 17
+
+
+ 143:Core/Src/Init.c ****         {
+ 702              		.loc 1 143 49 is_stmt 0 discriminator 3 view .LVU189
+ 703 017a D9E7     		b	.L41
+ 704              	.L51:
+ 705              		.align	2
+ 706              	.L50:
+ 707 017c 00300240 		.word	1073885184
+ 708 0180 00000240 		.word	1073872896
+ 709 0184 18080240 		.word	1073874968
+ 710 0188 00000000 		.word	.LANCHOR0
+ 711 018c 00000000 		.word	cup
+ 712 0190 00000000 		.word	flag
+ 713 0194 00000000 		.word	delay
+ 714 0198 00000000 		.word	T1
+ 715 019c 00000000 		.word	T0
+ 716 01a0 00100240 		.word	1073876992
+ 717              	.LBE17:
+ 718              		.cfi_endproc
+ 719              	.LFE133:
+ 721              		.section	.rodata
+ 722              		.align	2
+ 723              		.set	.LANCHOR0,. + 0
+ 724              	.LC0:
+ 725 0000 00010000 		.word	256
+ 726 0004 00020000 		.word	512
+ 727 0008 04000000 		.word	4
+ 728 000c 08000000 		.word	8
+ 729 0010 40000000 		.word	64
+ 730 0014 80000000 		.word	128
+ 731 0018 00000001 		.word	16777216
+ 732 001c 00000002 		.word	33554432
+ 733 0020 00000400 		.word	262144
+ 734 0024 00000800 		.word	524288
+ 735 0028 00004000 		.word	4194304
+ 736 002c 00008000 		.word	8388608
+ 737              		.text
+ 738              	.Letext0:
+ 739              		.file 2 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
+ 740              		.file 3 "C:/Users/\320\256\320\267\320\265\321\200/Documents/Tools/xpack-arm-none-eabi-gcc-13.2.1-
+ 741              		.file 4 "Core/Src/../Inc/../../CMSIS/Devices/STM32F4xx/Inc/STM32F429ZI/stm32f429xx.h"
+ARM GAS  C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 Init.c
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:21     .text.GPIO_G_Init:00000000 $t
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:27     .text.GPIO_G_Init:00000000 GPIO_G_Init
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:55     .text.GPIO_G_Init:00000028 $d
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:60     .text.GPIO_D_Init:00000000 $t
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:66     .text.GPIO_D_Init:00000000 GPIO_D_Init
-C:\Users\671D~1\AppData\Local\Temp\ccXRVhEC.s:92     .text.GPIO_D_Init:00000020 $d
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:21     .text.GPIO_G_Init:00000000 $t
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:27     .text.GPIO_G_Init:00000000 GPIO_G_Init
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:55     .text.GPIO_G_Init:00000028 $d
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:60     .text.GPIO_D_Init:00000000 $t
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:66     .text.GPIO_D_Init:00000000 GPIO_D_Init
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:92     .text.GPIO_D_Init:00000020 $d
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:98     .text.task1:00000000 $t
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:104    .text.task1:00000000 task1
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:375    .text.task1:00000144 $d
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:389    .text.task2:00000000 $t
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:395    .text.task2:00000000 task2
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:707    .text.task2:0000017c $d
+C:\Users\671D~1\AppData\Local\Temp\ccCuzVL1.s:722    .rodata:00000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+cup
+flag1
+flag0
+flag
+delay
+T1
+T0
